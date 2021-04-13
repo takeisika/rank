@@ -4,6 +4,7 @@
 
 
 
+
 <div class="container">
 <%@ranks=Like.group(:post_id).order('count_post_id DESC').limit(5).count(:post_id)%>
 <%@ranks.each do |rank|%>
@@ -37,7 +38,7 @@
       
       <div class="index_right">
        <div class="index_header">
-       <object><%=link_to(@user.name,"/users/#{@user.id}")%></object>
+       <object class="index_user_name"><%=link_to(@user.name,"/users/#{@user.id}")%></object>
         <p><%= @post.updated_at.to_s(:datetime_jp) %></p>
        </div>
       
