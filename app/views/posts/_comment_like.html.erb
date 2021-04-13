@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
 
+=======
+<%if @current_user%>
+>>>>>>> origin/master
 <% if Likecomment.find_by(user_id: @current_user.id, comment_id: comment.id) %>
 <object><%= link_to("/likecomments/#{comment.id}/destroy",method: :post,remote: true) do %>
   <span class="fa fa-heart like-btn-unlike fa-xs"><%=Likecomment.where(comment_id:comment.id).count%></span>
@@ -8,4 +12,14 @@
 <object><%= link_to("/likecomments/#{comment.id}/create", method: :post,remote: true) do %>
   <span class="fa fa-heart like-btn fa-xs"><%=Likecomment.where(comment_id:comment.id).count%></span>
 <% end %></object>
+<<<<<<< HEAD
 <% end %>
+=======
+<% end %>
+
+<%else%>
+<object><%= link_to("/likecomments/#{comment.id}/destroy",method: :post,remote: true) do %>
+  <span class="fa fa-heart like-btn-unlike fa-xs"><%=Likecomment.where(comment_id:comment.id).count%></span>
+<% end %></object>
+<%end%>
+>>>>>>> origin/master

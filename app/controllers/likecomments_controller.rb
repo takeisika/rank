@@ -1,4 +1,8 @@
 class LikecommentsController < ApplicationController
+<<<<<<< HEAD
+=======
+  before_action:ensuring,{only:[:destroy]}
+>>>>>>> origin/master
   def create
     @comment = Comment.find_by(id: params[:comment_id])
     @likecomment=Likecomment.new(user_id:@current_user.id,comment_id:params[:comment_id])
